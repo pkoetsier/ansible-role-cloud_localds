@@ -138,7 +138,7 @@
   set_fact:
     _cloud_localds_cmd:
       "{{ _cloud_localds_cmd }} --network-config {{ _cloudinit_net_config_yml }}"
-  when: cloud_localds.network_config is defined
+  when: cloud_localds.network_config is defined or cloud_localds.network_config_template is defined
 
 - name: DEBUG
   debug:
